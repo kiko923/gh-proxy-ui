@@ -11,7 +11,7 @@
   <meta name="twitter:card" content="summary_large_image"> 
   <meta name="twitter:site" content="@"> 
   <meta name="twitter:creator" content="@"> 
-  <meta property="og:url" content="[DOMAIN_PLACEHOLDER]"> 
+  <meta property="og:url" content="[DOMAIN]"> 
   <meta property="og:title" content="GitHub Proxy 代理加速"> 
   <meta property="og:description" content="github proxy国内加速,GitHub 文件,Releases,archive,gist,raw.githubusercontent.com 文件代理加速下载服务."> 
   <!-- Global site tag (gtag.js) - Google Analytics --> 
@@ -43,10 +43,10 @@ var _hmt = _hmt || [];
   <div id="page-wrapper"> 
    <!-- Header --> 
    <header id="header" class="alt"> 
-    <h1><a href="[DOMAIN_PLACEHOLDER]">GitHub Proxy</a></h1> 
+    <h1><a href="[DOMAIN]">GitHub Proxy</a></h1> 
     <nav id="nav"> 
      <ul> 
-      <li><a href="[DOMAIN_PLACEHOLDER]">首页</a></li> 
+      <li><a href="[DOMAIN]">首页</a></li> 
       <li><a href="https://static.yzcdn.net/gh-proxy-ui/images/wxpay.jpg">捐赠</a></li> 
       <li><a href="https://yz.mba/" target="_blank">博客</a></li> 
      </ul> 
@@ -84,7 +84,7 @@ var _hmt = _hmt || [];
        <header> 
         <h4><b>git clone</b></h4> 
        </header> 
-       <p><b>git clone</b> <font color="red">[DOMAIN_PLACEHOLDER]/</font><font color="green">https://github.com/stilleshan/ServerStatus</font> </p> 
+       <p><b>git clone</b> <font color="red">[DOMAIN]/</font><font color="green">https://github.com/stilleshan/ServerStatus</font> </p> 
        <header> 
         <h4><b>git clone私有仓库</b></h4> 
        </header> 
@@ -92,7 +92,7 @@ var _hmt = _hmt || [];
        <header> 
         <h4><b>wget &amp; curl</b></h4> 
        </header> 
-       <p><b>wget</b> <font color="red">[DOMAIN_PLACEHOLDER]/</font><font color="green">https://github.com/stilleshan/ServerStatus/archive/master.zip</font> <br> <b>wget</b> <font color="red">[DOMAIN_PLACEHOLDER]/</font><font color="green">https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</font> <br> <b>curl -O</b> <font color="red">[DOMAIN_PLACEHOLDER]/</font><font color="green">https://github.com/stilleshan/ServerStatus/archive/master.zip</font> <br> <b>curl -O</b> <font color="red">[DOMAIN_PLACEHOLDER]/</font><font color="green">https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</font> </p> 
+       <p><b>wget</b> <font color="red">[DOMAIN]/</font><font color="green">https://github.com/stilleshan/ServerStatus/archive/master.zip</font> <br> <b>wget</b> <font color="red">[DOMAIN]/</font><font color="green">https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</font> <br> <b>curl -O</b> <font color="red">[DOMAIN]/</font><font color="green">https://github.com/stilleshan/ServerStatus/archive/master.zip</font> <br> <b>curl -O</b> <font color="red">[DOMAIN]/</font><font color="green">https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</font> </p> 
       </section> 
       <section class="box"> 
        <h3>首页下载</h3> 
@@ -143,8 +143,8 @@ var _hmt = _hmt || [];
         const Domain = window.location.hostname;
               https_domain = 'https://' + Domain;
         document.querySelectorAll('*').forEach(element => {
-            if (element.innerHTML.includes('[DOMAIN_PLACEHOLDER]')) {
-                element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, https_domain);
+            if (element.innerHTML.includes('[DOMAIN]')) {
+                element.innerHTML = element.innerHTML.replace(/\[DOMAIN\]/g, https_domain);
             }
             if (element.innerHTML.includes('[NO_HTTPS_DOMAIN]')) {
                 element.innerHTML = element.innerHTML.replace(/\[NO_HTTPS_DOMAIN\]/g, Domain);

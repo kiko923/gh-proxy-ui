@@ -133,20 +133,17 @@ var _hmt = _hmt || [];
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         const currentDomain = window.location.hostname;
-        document.querySelectorAll('a[href*="[DOMAIN_PLACEHOLDER]"], meta[property="og:url"]').forEach(element => {
-            if (element.tagName === 'A') {
-                element.href = element.href.replace('[DOMAIN_PLACEHOLDER]', currentDomain);
-            } else if (element.tagName === 'META') {
-                element.setAttribute('content', element.getAttribute('content').replace('[DOMAIN_PLACEHOLDER]', currentDomain));
-            }
-        });
-        document.querySelectorAll('*').forEach(element => {
-            if (element.innerHTML.includes('[DOMAIN_PLACEHOLDER]')) {
-                element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, currentDomain);
-            }
+        const links = document.querySelectorAll('a[href*="[DOMAIN_PLACEHOLDER]"]');
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const newUrl = 'https://' + currentDomain;
+                window.location.href = newUrl;
+            });
         });
     });
 </script>
+
 
   <center>
   <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/KLPEMIxYMeMTDBgN/quote.js?theme=4&f=12&display=0,0,0,1,0,0,0,1"></script>

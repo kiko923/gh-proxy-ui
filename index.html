@@ -39,7 +39,7 @@ var _hmt = _hmt || [];
   <div id="page-wrapper"> 
    <!-- Header --> 
    <header id="header" class="alt"> 
-    <h1><a href="https://ghproxy.cc">GitHub Proxy</a></h1> 
+    <h1><a href="[DOMAIN_PLACEHOLDER]">GitHub Proxy</a></h1> 
     <nav id="nav"> 
      <ul> 
       <li><a href="https://ghproxy.cc">首页</a></li> 
@@ -129,6 +129,25 @@ var _hmt = _hmt || [];
   <script src="https://static.yzcdn.net/gh-proxy-ui/js/main.js"></script>
   <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
   <script>LA.init({id:"KLPEMIxYMeMTDBgN",ck:"KLPEMIxYMeMTDBgN",autoTrack:true})</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const currentDomain = window.location.hostname;
+        document.querySelectorAll('a[href*="[DOMAIN_PLACEHOLDER]"], meta[property="og:url"]').forEach(element => {
+            if (element.tagName === 'A') {
+                element.href = element.href.replace('[DOMAIN_PLACEHOLDER]', currentDomain);
+            } else if (element.tagName === 'META') {
+                element.setAttribute('content', element.getAttribute('content').replace('[DOMAIN_PLACEHOLDER]', currentDomain));
+            }
+        });
+        document.querySelectorAll('*').forEach(element => {
+            if (element.innerHTML.includes('[DOMAIN_PLACEHOLDER]')) {
+                element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, currentDomain);
+            }
+        });
+    });
+</script>
+
   <center>
   <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/KLPEMIxYMeMTDBgN/quote.js?theme=4&f=12&display=0,0,0,1,0,0,0,1"></script>
   </center>

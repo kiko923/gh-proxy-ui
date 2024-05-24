@@ -136,10 +136,11 @@ var _hmt = _hmt || [];
 
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        const currentDomain = window.location.hostname;
+        const Domain = window.location.hostname;
+              https_domain = 'https://' + Domain;
         document.querySelectorAll('*').forEach(element => {
             if (element.innerHTML.includes('[DOMAIN_PLACEHOLDER]')) {
-                element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, currentDomain);
+                element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, https_domain);
             }
         });
      // 显示网页内容

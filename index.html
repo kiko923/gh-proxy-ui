@@ -32,7 +32,12 @@ var _hmt = _hmt || [];
 
   gtag('config', 'UA-170464567-7');
 </script> 
-  <script async src="https://static.yzcdn.net/gh-proxy-ui/js/adsbygoogle.js" crossorigin="anonymous"></script> 
+  <style>
+    body {
+        display: none;
+    }
+</style>
+<!--   <script async src="https://static.yzcdn.net/gh-proxy-ui/js/adsbygoogle.js" crossorigin="anonymous"></script>  -->
  </head> 
  <body class="landing is-preload"> 
   <div id="page-wrapper"> 
@@ -137,6 +142,8 @@ var _hmt = _hmt || [];
                 element.innerHTML = element.innerHTML.replace(/\[DOMAIN_PLACEHOLDER\]/g, currentDomain);
             }
         });
+     // 显示网页内容
+        document.body.style.display = 'block';
     });
 </script>
 

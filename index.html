@@ -116,7 +116,7 @@
    <!-- Footer --> 
    <footer id="footer"> 
     <ul class="copyright"> 
-     <li>© [NO_HTTPS_DOMAIN]. All Rights Reserved.</li> 
+     <li>©[BIG_DOMAIN\]. All Rights Reserved.</li> 
      <li>Github Project : <a href="https://github.com/hunshcn/gh-proxy" target="_blank">hunshcn/gh-proxy</a></li> 
      <li>UI : <a href="https://ghproxy.com" target="_blank">ghproxy.com</a></li> 
     </ul> 
@@ -134,8 +134,10 @@
   <script src="https://static.yzcdn.net/gh-proxy-ui/js/util.js"></script> 
   <script src="https://static.yzcdn.net/gh-proxy-ui/js/main.js"></script>
   <script>
+   
     document.addEventListener('DOMContentLoaded', (event) => {
         const Domain = window.location.hostname;
+        const CapitalizedDomain = Domain.charAt(0).toUpperCase() + Domain.slice(1);
               https_domain = 'https://' + Domain;
         document.querySelectorAll('*').forEach(element => {
             if (element.innerHTML.includes('[DOMAIN]')) {
@@ -143,6 +145,9 @@
             }
             if (element.innerHTML.includes('[NO_HTTPS_DOMAIN]')) {
                 element.innerHTML = element.innerHTML.replace(/\[NO_HTTPS_DOMAIN\]/g, Domain);
+            }
+            if (element.innerHTML.includes('[BIG_DOMAIN]')) {
+                element.innerHTML = element.innerHTML.replace(/\[BIG_DOMAIN\]/g, CapitalizedDomain);
             }
         });
      // 显示网页内容
